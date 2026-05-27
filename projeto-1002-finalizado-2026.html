@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt/BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Consumo de Água</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #dff6ff;
+    color: #03396c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+header{
+    background: #0096c7;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p{
+    font-size: 1rem;
+}
+
+/* MAIN */
+
+main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.perguntas{
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.perguntas h2{
+    margin-bottom: 15px;
+    color: #0077b6;
+}
+
+.caixa-pergunta{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+select{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #90e0ef;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    padding-bottom: 10px;
+}
+
+.opcoes{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+/* INPUT */
+
+input{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #90e0ef;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus{
+    border-color: #0077b6;
+    box-shadow: 0 0 8px rgba(0,119,182,0.3);
+}
+
+/* BOTÃO */
+
+button{
+    background: #00b4d8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background: #0077b6;
+    transform: scale(1.05);
+}
+
+/* RESULTADO */
+
+#resultado{
+    margin-top: 15px;
+    background: #caf0f8;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* FOOTER */
+
+footer{
+    background: #0077b6;
+    color: white;
+    padding: 25px;
+}
+
+footer h3{
+    margin-bottom: 15px;
+}
+
+
+
+footer li{
+    margin: 8px 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px){
+
+    header h1{
+        font-size: 1.8rem;
+    }
+
+    .perguntas{
+        padding: 20px;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💧Seu Consumo de Água</h1>
+
+        <p>Veja quantos litros de água você consome por dia, mês e ano, e veja como você pode economizar!</p>
+    </header>
+    <main>
+        <section class="perguntas">
+            <h2>Responda a pergunta abaixo!</h2><br>
+   
+
+            <div class="caixa-pergunta">Quantos minutos dura o seu banho?🚿</div><br>
+            <input type="number" id="banhozinQuentin">
+            
+            <div class="caixa-pergunta">Quantas vezes você lava roupa na semana?👕</div><br>
+            <input type="number" id="lavagem_de_roupa">
+            
+            <div class="opcoes">Você deixa a torneira aberta ao lavar as louças?🧽</div>
+            <select>
+                <option value="Sim">Sim</option>
+                <option value="Nao">Não</option>
+            </select>
+            
+            <div class="opcoes">Você fecha a torneira ao escovar os dentes?🪥</div>
+            <select>
+                <option value="Sim">Sim</option>
+                <option value="Nao">Não</option>
+            </select>
+            
+            <div class="opcoes">O que você usa para lavar o quintal? 🪣</div>
+            <select>
+                <option>Água da chuva</option>
+                <option>Mangueira</option>
+            </select>
+            
+        <button onclick="calcular()">Calcular Consumo</button>
+
+            <h3>Resultado</h3>
+            <div id="resultado">Seu consumo de água aparecerá aqui</div>
+
+        </section>
+        
+    </main>
+    
+    <footer>
+      <h3>💧Dicas para economizar água!</h3>
+      
+      <ul>
+        <li>Reduza o tempo de banho🚿</li>
+        <li>Feche a torneira ao escovar os dentes🪥</li>
+        <li>Feche o chuveiro sempre que for se ensaboar ao tomar banho🧼</li>
+        <li>Reutilize água sempre que possível♻️</li>
+      </ul>
+    </footer>
+    <script src="script.js">
+    </script>
+
+</body>
+</html>
